@@ -39,6 +39,7 @@ import net.daw.helper.statics.MetaEnum;
  *
  * @author a022583461z
  */
+
 @TableSourceMetaInformation(
         TableName = "comentario",
         Description = "comentario"

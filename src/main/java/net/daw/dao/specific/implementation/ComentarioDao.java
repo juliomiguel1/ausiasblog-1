@@ -28,14 +28,15 @@
 package net.daw.dao.specific.implementation;
 
 import java.sql.Connection;
-import net.daw.bean.specific.implementation.CategoriaarticuloBean;
+import net.daw.bean.specific.implementation.ComentarioBean;
 import net.daw.dao.generic.implementation.TableDaoGenImpl;
 
 /**
  *
  * @author a022583461z
  */
-public class ComentarioDao extends TableDaoGenImpl<CategoriaarticuloBean> {
+
+public class ComentarioDao extends TableDaoGenImpl<ComentarioBean> {
 
     public ComentarioDao(Connection pooledConnection) throws Exception {
         super(pooledConnection);

@@ -36,7 +36,7 @@ appMenu = function () {
                             dom.i('class="fa fa-icon-smile"', '') +
                             'About'
                             )
-                    ) +           
+                    ) +
             dom.li('class="dropdown"',
                     dom.a('href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"',
                             dom.i('class="fa fa-icon-list-alt"', '') +
@@ -111,6 +111,24 @@ appMenu = function () {
                                     )
 
                             )
+                    ) +
+            dom.li('class="dropdown"',
+                    dom.a('href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"',
+                            dom.i('class="fa fa-icon-list-alt"', '') +
+                            'Proyectos' +
+                            dom.span('class="caret"', '')
+                            ) +
+                    dom.ul('class="dropdown-menu" role="menu"',
+                            dom.li('class="dropdown-header"', 'Blog') +
+                            dom.li('',
+                                    dom.a('href="#/documento/abc"',
+                                            dom.i('class="fa fa-fw fa-power-off"', '') +
+                                            'Blog'
+                                            )
+                                    )
+                            )
+
                     )
+
             )
 }

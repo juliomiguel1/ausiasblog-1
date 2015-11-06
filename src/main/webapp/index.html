@@ -193,6 +193,12 @@
         <script src="js/specific/tipousuario/routes.js" type="text/javascript"></script>
         <!-- Estado --> 
         <script src="js/specific/estado/routes.js" type="text/javascript"></script>
+        <!-- Comentario --> 
+        <script src="js/specific/comentario/routes.js" type="text/javascript"></script>
+        <!-- Categoria Articulo --> 
+        <script src="js/specific/categoriaarticulo/routes.js" type="text/javascript"></script>
+        <!-- Documento Categoria Articulo --> 
+        <script src="js/specific/documentocategoriaarticulo/routes.js" type="text/javascript"></script>
         <!-- --------------------------------------------------------------- -->
         <script type="text/javascript">
             function loadRoutes() {                
@@ -201,7 +207,11 @@
                 fDocumentoRoutes();
                 fEstadoRoutes();
                 fTipousuarioRoutes();
+                fCatArtRoutes();
+                fComentarioRoutes();
+                fDocCatArtRoutes();
             }
+            
             $(document).ready(function () {
                 configuration.pathConfig();
                 $('.broth_show_when_logged_in').hide();
