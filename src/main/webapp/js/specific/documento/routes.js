@@ -77,7 +77,7 @@ function fDocumentoRoutes() {
         header.empty().append(fillDocumentoPageHeader('Paginated List'));
         var strParam = parameter.getUrlObjectFromUrlString(this.params['url']);
         ausiasFLOW.reset();
-        ausiasFLOW.initialize(pListModule, content, strClass, 'plist', strParam);
+        ausiasFLOW.initialize(documentoplist, content, strClass, 'plist', strParam);
         return false;
     });
     //--------------------------------------------------------------------------

@@ -67,6 +67,7 @@ function fComentarioRoutes() {
     });
     //--------------------------------------------------------------------------
     Path.map("#/" + strClass + "/plist(/:url)").to(function () {
+        $('<link href="css/specific/comentario.css" rel="stylesheet" type="text/css"/>').appendTo("head");
         header.empty().append(fillDocumentoPageHeader('Paginated List'));
         var strParam = parameter.getUrlObjectFromUrlString(this.params['url']);
         ausiasFLOW.reset();
