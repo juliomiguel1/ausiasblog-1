@@ -28,18 +28,71 @@
 package net.daw.dao.specific.implementation;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
+import net.daw.bean.group.GroupBeanImpl;
+import net.daw.bean.specific.implementation.CategoriaarticuloBean;
 import net.daw.bean.specific.implementation.ComentarioBean;
+import net.daw.bean.specific.implementation.DocumentoBean;
 import net.daw.dao.generic.implementation.TableDaoGenImpl;
+import net.daw.data.specific.implementation.MysqlDataSpImpl;
+import net.daw.helper.statics.FilterBeanHelper;
+import net.daw.helper.statics.SqlBuilder;
 
 /**
  *
- * @author a022583461z
+ * @author los increibles
+ * dedicada a la hermana de Laorden
  */
-
 public class ComentarioDao extends TableDaoGenImpl<ComentarioBean> {
 
     public ComentarioDao(Connection pooledConnection) throws Exception {
         super(pooledConnection);
     }
     
+ 
+    
+
+    @Override
+    public ArrayList<ComentarioBean> getAll(ArrayList<FilterBeanHelper> alFilter, HashMap<String, String> hmOrder) throws Exception {
+
+        MysqlDataSpImpl oMysql = new MysqlDataSpImpl(oConnection);
+        strSqlSelectDataOrigin += SqlBuilder.buildSqlWhere(alFilter);
+        strSqlSelectDataOrigin += SqlBuilder.buildSqlOrder(hmOrder);
+        ArrayList<ComentarioBean> alComentarios = new ArrayList<>();
+        try {
+            ResultSet result = oMysql.getAllSql(strSqlSelectDataOrigin);
+            if (result != null) {
+                while (result.next()) {
+                    ComentarioBean oComentarioBean = new ComentarioBean();
+                    oComentarioBean.setId(result.getInt("id"));
+                    oComentarioBean.setId_documento(result.getInt("id_documento"));
+
+                    
+                    DocumentoDao oDocumentoDao = new DocumentoDao(oConnection);
+                   
+                    DocumentoBean oDocumentoBean = new DocumentoBean();
+                    oDocumentoBean.setId(result.getInt("id_documento"));
+
+                    oDocumentoBean = oDocumentoDao.get(oDocumentoBean, 2);
+                  
+                    GroupBeanImpl oGroupBeanImpl = new GroupBeanImpl();
+                    oGroupBeanImpl.setBean(oDocumentoBean);
+                    oGroupBeanImpl.setMeta(oDocumentoDao.getmetainformation());
+                    oComentarioBean.setObj_documento(oGroupBeanImpl);
+
+             
+                    oComentarioBean.setContenido(result.getString("contenido"));
+                    oComentarioBean.setNombreautor(result.getString("nombreautor"));
+                    alComentarios.add(oComentarioBean);
+                }
+            }
+        } catch (Exception ex) {
+            throw new Exception(this.getClass().getName() + ":get ERROR: " + ex.getMessage());
+        }
+
+        return alComentarios;
+
+    }
 }

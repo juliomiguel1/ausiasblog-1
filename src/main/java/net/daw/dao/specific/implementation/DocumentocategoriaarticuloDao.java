@@ -28,9 +28,18 @@
 package net.daw.dao.specific.implementation;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
+import net.daw.bean.group.GroupBeanImpl;
 import net.daw.bean.specific.implementation.CategoriaarticuloBean;
+import net.daw.bean.specific.implementation.ComentarioBean;
+import net.daw.bean.specific.implementation.DocumentoBean;
 import net.daw.bean.specific.implementation.DocumentocategoriaarticuloBean;
 import net.daw.dao.generic.implementation.TableDaoGenImpl;
+import net.daw.data.specific.implementation.MysqlDataSpImpl;
+import net.daw.helper.statics.FilterBeanHelper;
+import net.daw.helper.statics.SqlBuilder;
 
 /**
  *
@@ -42,4 +51,48 @@ public class DocumentocategoriaarticuloDao extends TableDaoGenImpl<Documentocate
         super(pooledConnection);
     }
     
+    
+    
+    @Override
+    public ArrayList<DocumentocategoriaarticuloBean> getAll(ArrayList<FilterBeanHelper> alFilter, HashMap<String, String> hmOrder) throws Exception {
+
+        MysqlDataSpImpl oMysql = new MysqlDataSpImpl(oConnection);
+        strSqlSelectDataOrigin += SqlBuilder.buildSqlWhere(alFilter);
+        strSqlSelectDataOrigin += SqlBuilder.buildSqlOrder(hmOrder);
+        ArrayList<DocumentocategoriaarticuloBean> alDocumentocategoriaarticulo = new ArrayList<>();
+        try {
+            ResultSet result = oMysql.getAllSql(strSqlSelectDataOrigin);
+            if (result != null) {
+                while (result.next()) {
+                    DocumentocategoriaarticuloBean oDocumentocategoriaarticuloBean = new DocumentocategoriaarticuloBean();
+                    oDocumentocategoriaarticuloBean.setId(result.getInt("id"));
+                    oDocumentocategoriaarticuloBean.setId_documento(result.getInt("id_documento"));
+
+                    //crear un dao de documento
+                    DocumentoDao oDocumentoDao = new DocumentoDao(oConnection);
+                    //un pojo de documento con elid de documento
+                    DocumentoBean oDocumentoBean = new DocumentoBean();
+                    oDocumentoBean.setId(result.getInt("id_documento"));
+
+                    oDocumentoBean = oDocumentoDao.get(oDocumentoBean, 2);
+                    //rellenar el pojo de documento con el dao
+                    //meter el pojo relleno a la pregunta
+                    GroupBeanImpl oGroupBeanImpl = new GroupBeanImpl();
+                    oGroupBeanImpl.setBean(oDocumentoBean);
+                    oGroupBeanImpl.setMeta(oDocumentoDao.getmetainformation());
+                    oDocumentocategoriaarticuloBean.setObj_documento(oGroupBeanImpl);
+
+                    //sacar del dao de documento los metadatos de documento
+                    //meterlos en el pojo de la pregunta tambien
+                    oDocumentocategoriaarticuloBean.setDescripcion(result.getString("descripcion"));
+                    alDocumentocategoriaarticulo.add(oDocumentocategoriaarticuloBean);
+                }
+            }
+        } catch (Exception ex) {
+            throw new Exception(this.getClass().getName() + ":get ERROR: " + ex.getMessage());
+        }
+
+        return alDocumentocategoriaarticulo;
+
+    }
 }
