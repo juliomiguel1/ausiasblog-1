@@ -77,7 +77,15 @@ function fDocumentoRoutes() {
         header.empty().append(fillDocumentoPageHeader('Paginated List'));
         var strParam = parameter.getUrlObjectFromUrlString(this.params['url']);
         ausiasFLOW.reset();
-        ausiasFLOW.initialize(documentoplist, content, strClass, 'plist', strParam);
+        ausiasFLOW.initialize(pListModule, content, strClass, 'plist', strParam);
+        return false;
+    });
+    //--------------------------------------------------------------------------
+        Path.map("#/" + strClass + "/plist(/:url)").to(function () {
+        header.empty().append(fillDocumentoPageHeader('Articulos'));
+        var strParam = parameter.getUrlObjectFromUrlString(this.params['url']);
+        ausiasFLOW.reset();
+        ausiasFLOW.initialize(articuloplist, content, strClass, 'plist', strParam);
         return false;
     });
     //--------------------------------------------------------------------------
