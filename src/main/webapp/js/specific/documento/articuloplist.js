@@ -32,11 +32,16 @@ articuloplist.prototype = new pListModule();
 
 articuloplist.prototype.render = function () {
     if (jsonData.status == 200) {
-        var titulo="";
+        var titulo = "";
+        var contenido = "";
         for (var i = 0; i <= jsonData.message.page.message.length-1; i++) {
             titulo += jsonData.message.page.message[i].titulo + '<br>';
+            contenido += jsonData.message.page.message[i].contenido + '<br>';
         }
-        return '<h1>' + titulo + '</h1>';
+        return '<h1>' + titulo + '</h1>' + 
+                '<h3>' + contenido + '</h3>'
+                
+        ;
 
 
 
