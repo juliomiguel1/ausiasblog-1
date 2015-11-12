@@ -32,27 +32,19 @@ articuloplist.prototype = new pListModule();
 
 articuloplist.prototype.render = function () {
     if (jsonData.status == 200) {
-        var titulo = "";
-        var contenido = "";
-        for (var i = 0; i <= jsonData.message.page.message.length-1; i++) {
-            titulo += jsonData.message.page.message[i].titulo + '<br>';
-            contenido += jsonData.message.page.message[i].contenido + '<br>';
+        var entrada = "";
+
+        for (var i = 0; i <= jsonData.message.page.message.length - 1; i++) {
+            entrada += '<div>' + jsonData.message.page.message[i].titulo + '</div>';
+            entrada += '<div>' + jsonData.message.page.message[i].contenido + '</div>';
+            entrada += '<div>' + jsonData.message.page.message[i].alta + '</div>';
+            //autor += jsonData.message.page.message[i].autor;
+            entrada += '<div>' + jsonData.message.page.message[i].hits + '</div>';
+            entrada += '<div>' + jsonData.message.page.message[i].etiquetas + '</div>';
+            entrada += '</br>';
+
         }
-        return '<h1>' + titulo + '</h1>' + 
-                '<h3>' + contenido + '</h3>'
-                
-        ;
+        return  entrada;
 
-
-
-//        for each (var titulo in jsonData.message.page.message) {
-//            
-//        }
-//        var visibles = 12;
-//        var strTable = table.getTable(
-//                this.getHeaderPageTableFunc(jsonData.message.meta.message, strOb, strUrlFromParamsWithoutOrder, visibles),
-//                this.getBodyPageTableFunc(jsonData.message.meta.message, jsonData.message.page.message, html.printPrincipal, this.loadButtons, this.loadPopups, visibles)
-//                );
-//        return '<div id="tablePlace">' + strTable + '</div>';
-    }
+    };
 };

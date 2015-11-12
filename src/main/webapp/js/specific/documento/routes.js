@@ -30,7 +30,7 @@ function fDocumentoRoutes() {
     var icon = '<i class="fa fa-file-text-o fa-5x"></i>';
     var fillDocumentoPageHeader = _.partial(html.getPageHeader, icon, 'Documento', _);
     var strClass = 'documento';
-    var header=$('#broth_panel_heading');
+    var header = $('#broth_panel_heading');
     var content = $('#broth_content');
     //--------------------------------------------------------------------------
     Path.map("#/" + strClass + "/remove/:id").to(function () {
@@ -81,7 +81,8 @@ function fDocumentoRoutes() {
         return false;
     });
     //--------------------------------------------------------------------------
-        Path.map("#/" + strClass + "/plist(/:url)").to(function () {
+    Path.map("#/" + strClass + "/plist(/:url)").to(function () {
+        $('<link href="css/specific/articulo.css" rel="stylesheet" type="text/css"/>').appendTo("head");
         header.empty().append(fillDocumentoPageHeader('Articulos'));
         var strParam = parameter.getUrlObjectFromUrlString(this.params['url']);
         ausiasFLOW.reset();

@@ -27,9 +27,13 @@ THE SOFTWARE.
 */
 /* 
     Created on : 10-nov-2015, 9:44:13
-    Author     : a022583461z
+    Author     : The Incredibles
 */
 
 body {
-    background: blue;
+    background: blue; 
+}
+.titulo {
+    border: 1px solid black;
+    margin-top: 20px;
 }
