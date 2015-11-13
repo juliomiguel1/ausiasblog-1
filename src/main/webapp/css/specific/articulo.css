@@ -31,9 +31,17 @@ THE SOFTWARE.
 */
 
 body {
-    background: blue; 
+    background: blue;     
+}
+.entradas {
+    border: 1px solid black;
+    width: 70%; 
+}
+.blog {
+    margin: 3%;
+    border: 1px solid black;  
+    width: 88%;    
 }
 .titulo {
-    border: 1px solid black;
-    margin-top: 20px;
+    border: 1px solid black;    
 }

@@ -34,17 +34,21 @@ articuloplist.prototype.render = function () {
     if (jsonData.status == 200) {
         var entrada = "";
 
+        entrada += '<div class = "entradas">';
         for (var i = 0; i <= jsonData.message.page.message.length - 1; i++) {
-            entrada += '<div>' + jsonData.message.page.message[i].titulo + '</div>';
+
+            entrada += '<div class = "blog">';
+            entrada += '<div class = "titulo">' + jsonData.message.page.message[i].titulo + '</div>' + '</br>';
             entrada += '<div>' + jsonData.message.page.message[i].contenido + '</div>';
             entrada += '<div>' + jsonData.message.page.message[i].alta + '</div>';
             //autor += jsonData.message.page.message[i].autor;
             entrada += '<div>' + jsonData.message.page.message[i].hits + '</div>';
             entrada += '<div>' + jsonData.message.page.message[i].etiquetas + '</div>';
-            entrada += '</br>';
-
+            entrada += '</div>';
         }
         return  entrada;
+        entrada += '</div>';
+    }
+    ;
 
-    };
 };
