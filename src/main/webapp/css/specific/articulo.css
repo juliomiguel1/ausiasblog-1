@@ -32,10 +32,11 @@ THE SOFTWARE.
 
 body {
     background: blue;     
+    width: 100%;
 }
 .entradas {
     border: 1px solid black;
-    width: 70%; 
+    width: 65%;     
 }
 .blog {
     margin: 3%;
@@ -43,5 +44,20 @@ body {
     width: 88%;    
 }
 .titulo {
-    border: 1px solid black;    
+    border: 1px solid black;
+    text-align: center;
+    font-size: 120%;
+    font-weight: bold;
+}
+.contenido {
+    margin: 2%;    
+}
+.datos {
+    text-align: right;
+    margin: 1%;
+}
+.categoria {
+    border: 1px solid black;
+    width: 10%;
+/*    float: right;    */
 }
