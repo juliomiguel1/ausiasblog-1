@@ -30,23 +30,28 @@ THE SOFTWARE.
     Author     : The Incredibles
 */
 
+* {
+    padding: 0;
+    margin: 0;
+}
 body {
-    background: blue;     
+    background: grey;    
     width: 100%;
+    height: 100%;
 }
 .entradas {
-    border: 1px solid black;
-    width: 65%;     
+    border: 2px solid grey;
+    width: 65%;
 }
 .blog {
     margin: 3%;
-    border: 1px solid black;  
-    width: 88%;    
+    border: 1px solid grey;  
+    width: 93%;    
 }
 .titulo {
     border: 1px solid black;
     text-align: center;
-    font-size: 120%;
+    font-size: 140%;
     font-weight: bold;
 }
 .contenido {
@@ -57,7 +62,24 @@ body {
     margin: 1%;
 }
 .categoria {
-    border: 1px solid black;
-    width: 10%;
-/*    float: right;    */
+    width: 30%;
+    border: 1px solid grey;
+    float: right;
+    margin: 0;
+}
+.buscador {
+    width: 20%;
+    margin: 3%;
+    height: 300px;
+    text-align: center;    
+}
+
+@media screen and (max-width: 770px) {
+    .entradas {
+        width: 100%;
+        float: left;
+    }
+    .buscador {
+        float: left;
+    }
 }

@@ -25,38 +25,41 @@
  * THE SOFTWARE.
  * 
  */
-
 var articuloplist = function () {
 };
 articuloplist.prototype = new pListModule();
-
+ 
 articuloplist.prototype.render = function () {
     if (jsonData.status == 200) {
         var entrada = "";
-        
-        entrada += '<div class = "entradas">';
-        for (var i = 0; i <= jsonData.message.page.message.length - 1; i++) {
-
-            entrada += '<div class = "blog">';
-            entrada += '<div class = "titulo">' + jsonData.message.page.message[i].titulo + '</div>' + '</br>';
-            entrada += '<div class = "contenido">' + jsonData.message.page.message[i].contenido + '</div>';
-            entrada += '<div class = "datos">' + "Fecha de alta: " + jsonData.message.page.message[i].alta + " | ";
-            //autor += jsonData.message.page.message[i].autor;
-            entrada += "Visitas: " + jsonData.message.page.message[i].hits + " | ";
-            entrada += "Tags: " + jsonData.message.page.message[i].etiquetas + '</div>';
-            entrada += '</div>';
-            
-        }
-        return  entrada;
+ 
+        entrada += '<div class = "container">';
+       
+            entrada += '<div class = "col-md-offset-1 col-md-3 categoria">';
+                entrada += '<div class = "buscador">' + '<input type="text" class="query" name="q" size="21" maxlength="255" value=" Búsqueda por categoría" onclick="this.select()">' + '</div>';
+                //entrada += '<div class = "buscar">' + '<input type="submit" name="Buscar" value="Buscar">' + '</div>';
+                entrada += '</div>';
+ 
+                entrada += '<div class = "col-md-8 entradas">';
+                    for (var i = 0; i <= jsonData.message.page.message.length - 1; i++) {
+ 
+                        entrada += '<div class = "blog">';
+                        //entrada += '<div class = "titulo">' + jsonData.message.page.message[i].id + '</div>' + '</br>';
+                        entrada += '<div class = "titulo">' + jsonData.message.page.message[i].titulo + '</div>' + '</br>';
+                        entrada += '<div class = "contenido">' + jsonData.message.page.message[i].contenido + '</div>';
+                        entrada += '<div class = "datos">' + "Fecha de alta: " + jsonData.message.page.message[i].alta + " | ";
+                        //autor += jsonData.message.page.message[i].autor;
+                        entrada += "Visitas: " + jsonData.message.page.message[i].hits + " | ";
+                        entrada += "Tags: " + jsonData.message.page.message[i].etiquetas + '</div>';
+                        entrada += '</div>';
+ 
+                    }
+               
+                entrada += '</div>';
         entrada += '</div>';
-        
-        var categoria = "";
-        categoria += '<div class = "categoria">';
-        categoria += '<input type="text" class="query" name="q" size="21" maxlength="255" value=" Búsqueda por categoría" onclick="this.select()">';
-        categoria += '</div>';
+        return  entrada;
+ 
     }
     ;
-    
-
-
+ 
 };
