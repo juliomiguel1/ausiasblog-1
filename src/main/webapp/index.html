@@ -181,9 +181,13 @@
         <script src="js/specific/documento/documentonew.js" type="text/javascript"></script>
         <script src="js/specific/documento/documentoedit.js" type="text/javascript"></script>
         <script src="js/specific/documento/documentopaginatedList.js" type="text/javascript"></script>
-        <script src="js/specific/documento/documentosautorList.js" type="text/javascript"></script>    
-        <script src="js/specific/documento/articuloplist.js" type="text/javascript"></script>
+        <script src="js/specific/documento/documentosautorList.js" type="text/javascript"></script>
         <script src="js/specific/documento/routes.js" type="text/javascript"></script>        
+        <!-- Blog -->
+        <script src="js/specific/blog/articulonew.js" type="text/javascript"></script>
+        <script src="js/specific/blog/bloglist.js" type="text/javascript"></script>
+        <script src="js/specific/blog/blogview.js" type="text/javascript"></script>
+        <script src="js/specific/blog/routes.js" type="text/javascript"></script>
         <!-- Tipodocumento -->        
         <script src="js/specific/tipodocumento/routes.js" type="text/javascript"></script>        
         <!-- Usuario -->       
@@ -195,10 +199,14 @@
         <!-- Estado --> 
         <script src="js/specific/estado/routes.js" type="text/javascript"></script>
         <!-- Comentario --> 
+        <script src="js/specific/comentario/comentarionew.js" type="text/javascript"></script>
+        <script src="js/specific/comentario/comentariolist.js" type="text/javascript"></script>
+        <script src="js/specific/comentario/comentarioedit.js" type="text/javascript"></script>
         <script src="js/specific/comentario/routes.js" type="text/javascript"></script>
         <!-- Categoria Articulo --> 
         <script src="js/specific/categoriaarticulo/routes.js" type="text/javascript"></script>
-        <!-- Documento Categoria Articulo --> 
+        <!-- Documento Categoria Articulo -->
+        <script src="js/specific/documentocategoriaarticulo/documentocategoriaarticulonew.js" type="text/javascript"></script>
         <script src="js/specific/documentocategoriaarticulo/routes.js" type="text/javascript"></script>
         <!-- --------------------------------------------------------------- -->
         <script type="text/javascript">
@@ -214,6 +222,7 @@
                 fCatArtRoutes();
                 fComentarioRoutes();
                 fDocCatArtRoutes();
+                fBlogRoutes();
             }
             
             $(document).ready(function () {

@@ -25,42 +25,40 @@
  * THE SOFTWARE.
  * 
  */
-
-function fComentarioRoutes() {
-    var icon = '<i class="fa fa-file-text-o fa-5x"></i>';
-    var fillDocumentoPageHeader = _.partial(html.getPageHeader, icon, 'Comentario', _);
-    var strClass = 'comentario';
+function fBlogRoutes() {
+    var icon = '';
+    var fillDocumentoPageHeader = _.partial(html.getPageHeader, icon, 'Blog', _);
+    var strClass = 'blog';
     var header = $('#broth_panel_heading');
     var content = $('#broth_content');
 //--------------------------------------------------------------------------
-    Path.map("#/" + strClass + "/edit(/:url)").to(function () {
+   Path.map("#/" + strClass + "/list(/:url)").to(function () {
         $('<link href="css/specific/articulo.css" rel="stylesheet" type="text/css"/>').appendTo("head");
-        header.empty().append(fillDocumentoPageHeader('Comentario'));
+      //  header.empty().append(fillDocumentoPageHeader('Articulos'));
         var strParam = parameter.getUrlObjectFromUrlString(this.params['url']);
         ausiasFLOW.reset();
-        ausiasFLOW.initialize(comentarioEdit, content, strClass, 'edit', strParam);
+        ausiasFLOW.initialize(blogList, content, strClass, 'bloglist', strParam);
         return false;
     });
 //--------------------------------------------------------------------------
-    Path.map("#/" + strClass + "/new(/:url)").to(function () {
+ /*   Path.map("#/" + strClass + "/articulonew(/:url)").to(function () {
         $('<link href="css/specific/articulo.css" rel="stylesheet" type="text/css"/>').appendTo("head");
-        header.empty().append(fillDocumentoPageHeader('Comentario'));
+        header.empty().append(fillDocumentoPageHeader('Articulos'));
         var strParam = parameter.getUrlObjectFromUrlString(this.params['url']);
         ausiasFLOW.reset();
-        ausiasFLOW.initialize(comentarioNew, content, strClass, 'new', strParam);
+        ausiasFLOW.initialize(articuloNew, content, strClass, 'new', strParam);
         return false;
-    });
+    });*/
 //--------------------------------------------------------------------------
-    Path.map("#/" + strClass + "/remove/:id").to(function () {
-        $('<link href="css/specific/articulo.css" rel="stylesheet" type="text/css"/>').appendTo("head");
-        header.empty().append(fillDocumentoPageHeader('Remove'));
+    Path.map("#/" + strClass + "/view/:id").to(function () {
+        $('<link href="css/specific/view.css" rel="stylesheet" type="text/css"/>').appendTo("head");
+      //  header.empty().append(fillDocumentoPageHeader('View'));
         var strParam = parameter.getUrlObjectFromUrlString(this.params['url']);
         ausiasFLOW.reset();
-        ausiasFLOW.initialize(removeModule, content, strClass, 'remove', strParam);
+        ausiasFLOW.initialize(blogView, content, strClass, 'blogview', strParam);
         return false;
     });
-
-
+    
+    
 }
-
 
