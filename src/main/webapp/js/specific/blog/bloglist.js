@@ -35,7 +35,7 @@ blogList.prototype.render = function() {
     var cabecera = "";
     cabecera += "<div>";
     cabecera += "<div class=\"cabecera\">";
-    cabecera += "Consejos efectivos para lograr el éxito, por Dawland";
+    cabecera += "Consejos efectivos para lograr el éxito, por Downland";
     cabecera += "</div>";
     cabecera += "<div class=\"interno\">";
     cabecera += "TU CAMINO.";
@@ -80,6 +80,17 @@ blogList.prototype.render = function() {
             categorias += "</div>";
         }
     }
+    blog += "<div class=\"snow\" id=\"snow\">";
+    blog += "<div class=\"copos f1\">❅</div>";
+    blog += "<div class=\"copos f2\">❅</div>";
+    blog += "<div class=\"copos f3\">❅</div>";
+    blog += "<div class=\"copos f4\">❅</div>";
+    blog += "<div class=\"copos f5\">❅</div>";
+    blog += "<div class=\"copos f6\">❅</div>";
+    blog += "<div class=\"copos f7\">❅</div>";
+    blog += "<div class=\"copos f8\">❅</div>";
+    blog += "<div class=\"copos f9\">❅</div>";
+    blog += "</div>";
     if (11 == jsonData.message.page.message[0].id_usuario) {
         blog += "<div class=\"row\">";
         blog += "<div class=\"col-md-11 col-md-offset-1\">";
@@ -90,6 +101,7 @@ blogList.prototype.render = function() {
         
         blog += "</div>";
     }
+    
     for (var i = 0; i < jsonData.message.page.message.length; i++) {
         blog += "<div class=\"row\">";
 
