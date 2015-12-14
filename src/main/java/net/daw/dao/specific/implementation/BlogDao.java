@@ -97,17 +97,15 @@ public class BlogDao extends TableDaoGenImpl<BlogBean> {
                                 oBlogBean.setId_documento(segundo.getInt("id_documento"));
                                 oBlogBean.setTitulo(segundo.getString("titulo"));
                                 oBlogBean.setEntrada(segundo.getString("entrada"));
+                                oBlogBean.setId_usuario(segundo.getInt("id_usuario"));
                                 oBlogBean.setEtiquetas(segundo.getString("etiquetas"));
                                 oBlogBean.setHits(segundo.getInt("hits"));
-                                oBlogBean.setId_comentario(segundo.getInt("id_comentario"));
-                                oBlogBean.setComentario(segundo.getString("comentario"));
                                 oBlogBean.setNombreautor(segundo.getString("nombreautor"));
                                 oBlogBean.setAlta(segundo.getDate("alta"));
                                 oBlogBean.setId_categoria(segundo.getInt("id_categoria"));
                                 oBlogBean.setNombre_cat(segundo.getString("nombre_cat"));
                                 oBlogBean.setDescripcion_cat(segundo.getString("descripcion_cat"));
-                                oBlogBean.setId_usuario(segundo.getInt("id_usuario"));
-                                oBlogBean.setUsuariocomentario(segundo.getInt("usuariocomentario"));
+                                
                                 oBlogBean.setId_login(id_usuario);
                                 alBlog.add(oBlogBean);
                             }
