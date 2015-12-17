@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 14-12-2015 a las 03:44:33
+-- Tiempo de generación: 17-12-2015 a las 01:17:13
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.5.29
 
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `documento` (
   `portada` tinyint(1) DEFAULT NULL COMMENT 'Portada',
   `destacado` tinyint(1) DEFAULT NULL COMMENT 'Destacado',
   `id_tipodocumento` int(6) DEFAULT NULL COMMENT 'Tipo'
-) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `documento`
@@ -128,7 +128,6 @@ INSERT INTO `documento` (`id`, `titulo`, `contenido`, `alta`, `cambio`, `hits`, 
 (28, 'c', 'sd', '2014-09-21', '2014-09-21', 2, 2, 'das', 1, 1, 1, 7),
 (29, '¿Por qué fracasar es vital para alcanzar el éxito?', 'Este es un buen espacio para extenderte sobre tu compañía y servicios. Puedes usar este espacio para incorporar más detalles sobre tu empresa. Escribe sobre tu personal y los servicios que ofreces. Cuéntales a los visitantes la historia sobre cómo se te ocurrió la idea de tu negocio y diles qué te diferencia de tus competidores. Haz que tu empresa se destaque y muestra a tus visitantes quién eres. Consejo: Agrega tu propia imagen haciendo clic en la imagen y luego en Cambiar Imagen.', '2014-09-21', '2014-09-21', 555, 1, 'rafa', 0, 0, 0, 2),
 (35, 'das', 'asdasd%20asdasd', '2014-09-28', '2014-09-28', 111, 2, 'ddd', 1, 1, 1, 10),
-(36, '¿Por qué fracasar es vital para alcanzar el éxito?', 'Este es un buen espacio para extenderte sobre tu compañía y servicios. Puedes usar este espacio para incorporar más detalles sobre tu empresa. Escribe sobre tu personal y los servicios que ofreces. Cuéntales a los visitantes la historia sobre cómo se te ocurrió la idea de tu negocio y diles qué te diferencia de tus competidores. Haz que tu empresa se destaque y muestra a tus visitantes quién eres. Consejo: Agrega tu propia imagen haciendo clic en la imagen y luego en Cambiar Imagen.', '2014-09-28', '2014-09-28', 22, 1, 'ddd', 0, 1, 0, 2),
 (37, 'ads', 'asd', '2014-09-28', '2014-09-28', 2, 1, 'das', 0, 0, 0, 3),
 (38, 'fd', 'fsdfsd', '2014-09-28', '2014-09-28', 2, 1, 'das', 0, 0, 0, 3),
 (39, 'fadf', 'sdf', '2014-09-28', '2014-09-28', 2222, 1, 'ana', 1, 1, 0, 3),
@@ -179,7 +178,9 @@ INSERT INTO `documento` (`id`, `titulo`, `contenido`, `alta`, `cambio`, `hits`, 
 (88, 'Pregunta uno', 'Cuestionario prueba', '2015-11-03', '2015-11-03', 0, 7, 'who, is, the, best', 0, 1, 0, 12),
 (89, 'Pregunta 2', 'Esto es una pregunta?', '2015-11-03', '2015-11-03', NULL, 6, 'pregunta, tocapelotas', 0, 1, 0, 12),
 (90, 'hola adios', 'estas o no?', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(91, 'Hoy DAW celebra una comida.', 'El "retorno" del Comandante ha dado ---- IIIIVAN', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2);
+(91, 'Hoy DAW celebra una comida.', 'El "retorno" del Comandante ha dado ---- IIIIVAN', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2),
+(92, '50 ideas para emprender negocios en Internet', 'Ideas para emprender\r\n\r\n\r\n1.- Blogs. Crea un Blog profesional y utilízalo como vehículo para mejorar tu marca personal. Un Blog puede darle una gran visibilidad a un negocio y ser un escaparate perfecto para conseguir leads y clientes.\r\n\r\n2.- Tienda Online. Crea una tienda online y da el salto a Internet, y consigue trasladar estos artículos que vendías en tu tienda física a tu Ecommerce. Si estas interesado en crear tu propio Ecommerce aquí te dejo una guía de cómo vender con una tienda online.\r\n\r\n3.- Crea un equipo de trabajo que ofrezca diferentes servicios. La idea de trabajar como un profesional encerrado en un despacho quedó atrás, ahora podemos unir fuerzas y sinergias con otros profesionales de nuestro sector para que entre todos poder realizar proyectos más complejos y completos que beneficien a todos los miembros del equipo. Aquí podemos decir la frase: “La unión hace la fuerza”.\r\n\r\n4.- Asesor de ventas por Internet. No todo el mundo sabe cuáles son los mejores productos para vender por Internet, así un asesor puede orientar a cualquier negocio a elegir sólo aquellos productos que realmente sean competitivos y puedan aportar ingresos a la empresa.\r\n\r\n5.- La marca en Internet como tu mejor carta de presentación. Si tu marca es popular y conocida en tu sector, tendrás mucho ganado y te será más sencillo atraer y conseguir clientes al negocio que quieres emprender.', NULL, NULL, 152, 11, 'emprender', NULL, NULL, NULL, 2),
+(93, 'La marca personal como tu mejor curriculum vitae en Internet', 'Porque con una Marca Personal potente demuestras tus capacidades, habilidades y los valores que te diferencian del resto de los profesionales a tu comunidad, o a quienes se interesen en tenerte dentro del grupo de trabajadores en una empresa.\r\n\r\nPorque tener un Personal Branding potente en el mundo online hará que…\r\n\r\nSe acuerden de ti cuando alguna empresa busque contratar un profesional como tú.\r\nQue cuando un Headhunter o Director de Recursos Humanos busque un trabajador con tus características si tu Marca Personal es visible, te encuentren más fácilmente.\r\nQue piensen en ti, porque le inspiras confianza y quieran contratar tus servicios.\r\nQue frente a otro profesional te consideren la mejor opción.\r\nPor que tu marca personal puede amplificar las acciones que realiza la empresa en Internet.\r\nPorque al ser un profesional referente en tu sector te resultará más sencillo conectar con otros influenciadores que te ayuden a conseguir un mejor resultado.\r\nPorque a la empresa le resultará más sencillo construir o hacer crecer una audiencia cuando trabaja con un influenciador.', NULL, NULL, 99, 11, 'marketing', NULL, NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -591,7 +592,7 @@ ALTER TABLE `comentario`
 -- AUTO_INCREMENT de la tabla `documento`
 --
 ALTER TABLE `documento`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Num.',AUTO_INCREMENT=92;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'Num.',AUTO_INCREMENT=94;
 --
 -- AUTO_INCREMENT de la tabla `documentocategoriaarticulo`
 --

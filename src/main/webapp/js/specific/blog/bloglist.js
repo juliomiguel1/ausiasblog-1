@@ -162,20 +162,17 @@ blogList.prototype.render = function() {
 
             blog += "<div class=\"columnaderecha\">";
 
-            blog += "<div>";
-            blog += "Nombre";
+            blog += "<div id='nombreAbout'>";
+            blog += "Downland";
             blog += "</div>";
 
-            blog += "<div class=\"imagen\">";
-            blog += '<img src="images/about.jpg" alt="" class="img-responsive" />"';
-            blog += "</div>";
 
             blog += "<div>";
             blog += "Somos una organización si ánimo de lucro, simplemente escribimos lo que se nos ocurre";
             blog += "</div>";
 
-            blog += "<div style=\"padding-top:20px;\">";
-            blog += "Busqueda por Categorias";
+            blog += "<div id='categorias' style=\"padding-top:20px;\">";
+            blog += "Categorias";
             blog += "</div>";
 
             blog += "<div>";
